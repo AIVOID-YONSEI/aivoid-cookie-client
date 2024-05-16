@@ -29,7 +29,7 @@ const agree = () => {
           We use AIs
         </h2>
         <p style="font-size: 16px; margin-top: 20px">
-          해당 사이트에서 제공되는 음성은 AI에 의해 제작된 딥보이스를 포함하고 있습니다.<br />
+          해당 사이트에서 제공되는 음성은 AI에 의해 생성된 딥보이스를 포함하고 있습니다.<br />
           이용에 동의하시겠습니까?<br /><br />
           <span style="color: #666; font-weight: 300; font-size: 14px"> * 동의하지 않는 경우 사이트 이용에 제한이 있을 수 있습니다. </span>
         </p>
