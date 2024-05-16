@@ -5,9 +5,10 @@ const visible = ref(false);
 
 onMounted(() => {
   const isAgreed = sessionStorage.getItem('isAgreed');
-  const bool = isAgreed ? JSON.parse(isAgreed) : false;
 
-  visible.value = !bool;
+  if (!isAgreed) {
+    visible.value = true;
+  }
 });
 
 const agree = () => {
