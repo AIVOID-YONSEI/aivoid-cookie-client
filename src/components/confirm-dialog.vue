@@ -4,13 +4,19 @@ import { ref, onMounted } from 'vue';
 const visible = ref(false);
 
 onMounted(() => {
-  const bool = sessionStorage.getItem('isAgreed') ? JSON.parse(sessionStorage.getItem('isAgreed')) : false;
+  const isAgreed = sessionStorage.getItem('isAgreed');
+  const bool = isAgreed ? JSON.parse(isAgreed) : false;
 
   visible.value = !bool;
 });
 
 const agree = () => {
   sessionStorage.setItem('isAgreed', 'true');
+  visible.value = false;
+};
+
+const disagree = () => {
+  sessionStorage.setItem('isAgreed', 'false');
   visible.value = false;
 };
 </script>
@@ -35,7 +41,7 @@ const agree = () => {
         </p>
         <div class="buttons">
           <Button style="padding: 5px 10px" @click="agree">동의</Button>
-          <Button style="padding: 5px 10px" severity="secondary">동의하지 않음</Button>
+          <Button style="padding: 5px 10px" severity="secondary" @click="disagree">동의하지 않음</Button>
         </div>
       </div>
     </div>
@@ -53,6 +59,7 @@ const agree = () => {
   .wrapper {
     flex-direction: column;
     align-items: center;
+    gap: 20px;
   }
 }
 
